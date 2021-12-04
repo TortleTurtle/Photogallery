@@ -1,6 +1,7 @@
 import {Header} from "../components/header";
 import {Banner} from "../components/banner";
 import {Component} from "react";
+import {Footer} from "../components/footer";
 
 export default class Home extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class Home extends Component {
             <div className={'home'}>
                 <Header/>
                 <Banner images={page.bannerImages}/>
+                <Footer/>
             </div>
         )
     }

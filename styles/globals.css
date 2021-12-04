@@ -7,6 +7,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   font-size: 16px;
+  overflow-x: hidden;
 }
 section {
   width: 100%;
@@ -23,7 +24,7 @@ section {
   padding: 3rem 0 3rem 0;
 }
 .column {
-  width: 100%;
+  flex-grow: 1;
   height: auto;
   display: flex;
   flex-flow: column nowrap;
@@ -34,11 +35,8 @@ section {
 @media only screen and (min-width: 992px){
   .row {
     flex-flow: row nowrap;
-    justify-content: space-around;
     padding: 3rem 0 3rem 0;
-  }
-  .column {
-    width: 40%;
+    align-items: flex-start;
   }
 }
 

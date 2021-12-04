@@ -1,0 +1,34 @@
+.banner {
+    width: 100%;
+    flex-flow: column nowrap;
+    display: flex;
+}
+
+.column {
+    flex-grow: 1;
+    height: auto;
+}
+
+.imgContainer {
+    position: relative;
+    width: 100%;
+}
+
+.imgContainer:first-child {
+    display: none;
+    height: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .banner {
+        flex-flow: row nowrap;
+        align-items: stretch;
+        height: 90vh;
+    }
+    .imgContainer:first-child {
+        display: block;
+    }
+    .imgContainer:last-child {
+        display: none;
+    }
+}

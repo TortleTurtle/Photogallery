@@ -7,14 +7,16 @@ export class Banner extends React.Component {
         super(props);
     }
     render() {
-        const images = this.props.images
-        console.log(`base url: ${process.env.NEXT_PUBLIC_API_URI}`);
+        const {images, title, subtitle} = this.props
         return (
-            //TODO: Add a text field for page title.
             <section className={`${styles.banner}`}>
+                <div className={styles.title}>
+                    <h1>{title}</h1>
+                    <h3>{subtitle}</h3>
+                </div>
                 <div className={styles.column}>
                     <div className={styles.imgContainer}>
-                        <Image className={styles.image} src={`${process.env.NEXT_PUBLIC_API_URI}${images[0].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_API_URI}${images[0].url}`}
                                layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"center"}
@@ -24,7 +26,7 @@ export class Banner extends React.Component {
                         />
                     </div>
                     <div className={styles.imgContainer}>
-                        <Image className={styles.mobile} src={`${process.env.NEXT_PUBLIC_API_URI}${images[0].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_API_URI}${images[0].url}`}
                                width={images[0].width}
                                height={images[0].height}
                                layout={"responsive"}
@@ -46,7 +48,7 @@ export class Banner extends React.Component {
                         />
                     </div>
                     <div className={styles.imgContainer}>
-                        <Image className={styles.mobile} src={`${process.env.NEXT_PUBLIC_API_URI}${images[1].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_API_URI}${images[1].url}`}
                                width={images[1].width}
                                height={images[1].height}
                                layout={"responsive"}

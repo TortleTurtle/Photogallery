@@ -2,9 +2,10 @@
     width: 100%;
     flex-flow: column nowrap;
     display: flex;
+    margin-top: 10vh;
 }
-
 .column {
+    position: relative;
     flex-grow: 1;
     height: auto;
 }
@@ -13,10 +14,20 @@
     position: relative;
     width: 100%;
 }
-
 .imgContainer:first-child {
     display: none;
     height: 100%;
+}
+
+.title {
+    position: absolute;
+    top: 12vh;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 5;
+    background: white;
+    padding: 0.5em 1em 0.5em 1em;
+    text-align: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -30,5 +41,10 @@
     }
     .imgContainer:last-child {
         display: none;
+    }
+    .title {
+        top: auto;
+        bottom: 20%;
+        left: 30%;
     }
 }

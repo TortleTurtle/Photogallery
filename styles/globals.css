@@ -3,12 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
 html, body {
   width: 100%;
   min-height: 100vh;
   font-size: 16px;
-  overflow-x: hidden;
 }
+
 section {
   width: 100%;
   height: auto;
@@ -24,7 +28,7 @@ section {
   padding: 3rem 0 3rem 0;
 }
 .column {
-  flex-grow: 1;
+  flex: 1 1 0px;
   height: auto;
   display: flex;
   flex-flow: column nowrap;

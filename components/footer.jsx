@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styles from "../styles/Footer.module.css"
 
 export class Footer extends React.Component {
@@ -28,7 +29,23 @@ export class Footer extends React.Component {
                 </div>
                 {/*TODO: Futher style socials*/}
                 <div className={styles.socials}>
-                    <h3>Socials</h3>
+                    <div className={styles.seperator}/>
+                    <div className={styles.icons}>
+                        <a href={"https://facebook.com"} target="_blank" rel="noreferrer">
+                            <Image src={"/../public/images/facebook.svg"}
+                                   width={80}
+                                   height={80}
+                                   alt={"facebook icon"}
+                            />
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noreferrer">
+                            <Image src={"/../public/images/instagram.svg"}
+                                   width={80}
+                                   height={80}
+                                   alt={"instagram icon"}
+                            />
+                        </a>
+                    </div>
                 </div>
             </footer>
         )

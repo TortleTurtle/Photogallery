@@ -1,0 +1,45 @@
+.imageText {
+    width: 100%;
+    flex-flow: column nowrap;
+    display: flex;
+    border-top: 2em black solid;
+}
+
+.column {
+    flex: 1 1 0px;
+    flex-grow: 1;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.imgContainer {
+    position: relative;
+    width: 100%;
+}
+
+.imgContainer:first-child {
+    display: none;
+    height: 100%;
+}
+
+.textContainer {
+    margin: 2em 2em;
+}
+
+@media screen and (min-width: 768px) {
+    .imageText {
+        flex-flow: row nowrap;
+        align-items: stretch;
+        height: 90vh;
+    }
+    .imgContainer:first-child {
+        display: block;
+    }
+    .imgContainer:last-child {
+        display: none;
+    }
+    .column {
+        /*max-width: 50%;*/
+    }
+}

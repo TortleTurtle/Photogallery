@@ -4,6 +4,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     grid-gap: 1em;
+    padding: 1em 0 0;
     color: white;
     background: black;
     text-align: center;
@@ -13,9 +14,6 @@
     width: 80%;
     margin: 0 auto 0 auto;
     background: white;
-}
-.footer ul {
-    list-style: none;
 }
 .icons {
     display: flex;
@@ -33,5 +31,8 @@
     }
     .socials {
         grid-area: 2/2/3/5;
+    }
+    .footer div:first-child {
+        padding-left: 1em;
     }
 }

@@ -27,7 +27,6 @@ export class Footer extends React.Component {
                     <h3>Site</h3>
                     <p>Made by Cheftags</p>
                 </div>
-                {/*TODO: Futher style socials*/}
                 <div className={styles.socials}>
                     <div className={styles.seperator}/>
                     <div className={styles.icons}>

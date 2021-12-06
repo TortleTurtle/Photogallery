@@ -14,14 +14,15 @@ export default class Home extends Component {
             <div className={'home'}>
                 <Header/>
                 <Banner images={[images[0], images[1]]} title={title} subtitle={subtitle}/>
-                <ImageText image={images[2]} imagePosition={1} title={"About"} text={about} textPosition={0}/>
-                {/*TODO: Latest Gallery + see more*/}
+                <main>
+                    <ImageText image={images[2]} imagePosition={1} title={"About"} text={about} textPosition={0}/>
+                    <ImageText image={images[3]} imagePosition={0} title={"Contact"} text={"Contact informatie"} textPosition={1}/>
+                </main>
                 <Footer/>
             </div>
         )
     }
 }
-
 export async function getStaticProps() {
     console.log(`fetching: ${process.env.API_URI}/home`);
     const res = await fetch(`${process.env.API_URI}/home`);

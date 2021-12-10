@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/Header.module.css";
+import Link from "next/link"
 
 export class Header extends React.Component {
     constructor(props) {
@@ -24,13 +25,19 @@ export class Header extends React.Component {
                 <nav className={`${styles.nav} ${this.state.toggle ? styles["nav--toggled"] : ""}`}>
                     <ul>
                         <li>
-                            <a href={""}>Home</a>
+                            <Link href={"/"}>
+                                <a>Home</a>
+                            </Link>
                         </li>
                         <li>
-                            <a href={""}>Galleries</a>
+                            <Link href={"/galleries"}>
+                                <a>Galleries</a>
+                            </Link>
                         </li>
                         <li>
-                            <a href={""}>Contact</a>
+                            <Link href={"/contact"}>
+                                <a>Contact</a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

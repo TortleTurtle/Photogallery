@@ -1,3 +1,5 @@
+@value primary, secondary, tertiary from "./colours.css";
+
 .imageText {
     width: 100%;
     flex-flow: column nowrap;
@@ -25,6 +27,15 @@
 
 .textContainer {
     margin: 2em 2em;
+}
+
+.link {
+    color: primary;
+    cursor: pointer;
+}
+
+.link:hover {
+    color: tertiary;
 }
 
 @media screen and (min-width: 768px) {

@@ -9,7 +9,7 @@ export default class Home extends Component {
         super(props);
     }
     render() {
-        const {title, subtitle, about, images} = this.props.data;
+        const {title, subtitle, about, images} = this.props.page;
         return (
             <div className={'home'}>
                 <Header/>
@@ -24,14 +24,12 @@ export default class Home extends Component {
     }
 }
 export async function getStaticProps() {
-    console.log(`fetching: ${process.env.API_URI}/home`);
     const res = await fetch(`${process.env.API_URI}/home`);
-    const data = await res.json();
-    console.log(data);
+    const page = await res.json();
 
     return {
         props: {
-            data
+            page,
         }
     }
 }

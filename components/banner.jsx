@@ -12,7 +12,7 @@ export class Banner extends React.Component {
             <section className={`${styles.banner}`}>
                 <div className={styles.title}>
                     <h1>{title}</h1>
-                    <h3>{subtitle}</h3>
+                    <h3>{subtitle ? subtitle : ""}</h3>
                 </div>
                 <div className={styles.column}>
                     <div className={styles.imgContainer}>

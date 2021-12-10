@@ -12,17 +12,17 @@ export default class Galleries extends React.Component {
         return (
             <div className={'galleries'}>
                 <Header/>
-                <Banner title={this.props.page.title} images={this.props.page.bannerImages} />
                 <main>
-                    {this.props.galleries.map((gallery, i) => {
-                        return <ImageText
-                            key={gallery.id}
-                            image={gallery.photos[0]}
-                            imagePosition={ i % 2 === 0 ? 0 : 1}
-                            title={gallery.title} subtitle={gallery.photographer}
-                            link={`/${gallery.slug}`}
-                            text={gallery.description}
-                            textPosition={ i % 2 === 0 ? 1 : 0} />
+                    <Banner title={this.props.page.title} images={this.props.page.bannerImages} />
+                        {this.props.galleries.map((gallery, i) => {
+                            return <ImageText
+                                key={gallery.id}
+                                image={gallery.photos[0]}
+                                imagePosition={ i % 2 === 0 ? 0 : 1}
+                                title={gallery.title} subtitle={gallery.photographer}
+                                link={`/galleries/${gallery.slug}`}
+                                text={gallery.description}
+                                textPosition={ i % 2 === 0 ? 1 : 0} />
                         }
                     )}
                 </main>

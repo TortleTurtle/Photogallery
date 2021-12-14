@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image"
 import styles from "../../styles/Gallery.module.css";
 import {Header} from "../../components/header";
 import {Hero} from "../../components/hero";
+import {GalleryPhotos} from "../../components/galleryPhotos";
+import {Footer} from "../../components/footer";
 
 export default class Gallery extends React.Component {
     constructor(props) {
@@ -19,8 +20,9 @@ export default class Gallery extends React.Component {
                 <Header/>
                 <main>
                     <Hero title={title} image={hero} subtitle={photographer}/>
-                    {/*TODO: Gallery with onClick large Image */}
+                    <GalleryPhotos photos={photos}/>
                 </main>
+                <Footer/>
             </div>
         )
     }

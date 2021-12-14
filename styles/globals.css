@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter&display=swap');
+@value primary, secondary, tertiary from "./colours.css";
+
 
 * {
   margin: 0;
@@ -48,6 +50,7 @@ section {
 
 h1, h2, h3, h4 {
   font-family: 'Bebas Neue', sans-serif;
+  color: primary;
 }
 h1 {
   font-size: 3em;
@@ -66,4 +69,5 @@ p, ul, a {
   font-size: 1em;
   font-family: 'Inter', sans-serif;
   text-decoration: none;
+  color: primary;
 }

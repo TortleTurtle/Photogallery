@@ -43,11 +43,13 @@
 .prev {
     top: 50vh;
     left: 1em;
+    transform: translate(0, -50%);
 }
 /* Next */
 .next {
     top: 50vh;
     right: 1em;
+    transform: translate(0, -50%);
 }
 /* Close */
 .close {

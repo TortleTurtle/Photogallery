@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../styles/Footer.module.css"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export class Footer extends React.Component {
     constructor(props) {
@@ -19,8 +20,13 @@ export class Footer extends React.Component {
                 <div>
                     <h3>Contact</h3>
                     <ul>
-                        <li>Email:</li>
-                        <li>Mobile:</li>
+                        <li>
+                            <FontAwesomeIcon className={styles.listIcon} icon={['fas', 'envelope']} fixedWidth/>
+                            ditiseenadres@email.com
+                        </li>
+                        <li><FontAwesomeIcon className={styles.listIcon} icon={['fas', 'mobile-alt']} fixedWidth/>
+                            0634146573
+                        </li>
                     </ul>
                 </div>
                 <div>
@@ -29,7 +35,7 @@ export class Footer extends React.Component {
                 </div>
                 <div className={styles.socials}>
                     <div className={styles.seperator}/>
-                    <div className={styles.icons}>
+                    <div className={styles.socialsIcons}>
                         <a href={"https://facebook.com"} target="_blank" rel="noreferrer">
                             <Image src={"/../public/images/facebook.svg"}
                                    width={80}

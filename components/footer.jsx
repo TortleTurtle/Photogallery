@@ -20,13 +20,18 @@ export class Footer extends React.Component {
                 <div>
                     <h3>Contact</h3>
                     <ul>
-                        <li>
-                            <FontAwesomeIcon className={styles.listIcon} icon={['fas', 'envelope']} fixedWidth/>
-                            ditiseenadres@email.com
-                        </li>
-                        <li><FontAwesomeIcon className={styles.listIcon} icon={['fas', 'mobile-alt']} fixedWidth/>
-                            0634146573
-                        </li>
+                        <a href={`mailto:${this.props.email}`}>
+                            <li>
+                                <FontAwesomeIcon className={styles.listIcon} icon={['fas', 'envelope']} fixedWidth/>
+                                {this.props.email}
+                            </li>
+                        </a>
+                        <a href={`tel:${this.props.phone}`}>
+                            <li>
+                                <FontAwesomeIcon className={styles.listIcon} icon={['fas', 'mobile-alt']} fixedWidth/>
+                                {this.props.phone}
+                            </li>
+                        </a>
                     </ul>
                 </div>
                 <div>

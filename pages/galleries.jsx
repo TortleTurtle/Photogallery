@@ -2,6 +2,7 @@ import React from "react";
 import {Banner} from "../components/banner";
 import {ImageText} from "../components/ImageText";
 import {Header} from "../components/header";
+import {Footer} from "../components/footer";
 
 export default class Galleries extends React.Component {
     constructor(props) {
@@ -26,6 +27,7 @@ export default class Galleries extends React.Component {
                         }
                     )}
                 </main>
+                <Footer email={this.props.contact.email} phone={this.props.contact.phoneNumber}/>
             </div>
         )
     }
@@ -38,10 +40,10 @@ export async function getStaticProps() {
     const res_galleries = await fetch(`${process.env.API_URI}/galleries?_sort=published_at:desc`);
     const galleries = await res_galleries.json();
 
+    const res_contact = await fetch(`${process.env.API_URI}/contact`);
+    const contact = await res_contact.json()
+
     return {
-        props: {
-            page,
-            galleries
-        }
+        props: {page, galleries, contact}
     }
 }

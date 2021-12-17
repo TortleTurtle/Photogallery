@@ -18,18 +18,21 @@ export default class Home extends Component {
                     <ImageText image={images[2]} imagePosition={1} title={"About"} text={about} textPosition={0}/>
                     <ImageText image={images[3]} imagePosition={0} title={"Contact"} text={"Contact informatie"} textPosition={1}/>
                 </main>
-                <Footer/>
+                <Footer email={this.props.contact.email} phone={this.props.contact.phoneNumber}/>
             </div>
         )
     }
 }
 export async function getStaticProps() {
-    const res = await fetch(`${process.env.API_URI}/home`);
-    const page = await res.json();
+    const res_page = await fetch(`${process.env.API_URI}/home`);
+    const page = await res_page.json();
+
+    const res_contact = await fetch(`${process.env.API_URI}/contact`);
+    const contact = await res_contact.json();
+
+    console.log(contact);
 
     return {
-        props: {
-            page,
-        }
+        props: {page, contact}
     }
 }

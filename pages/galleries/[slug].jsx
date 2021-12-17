@@ -22,7 +22,7 @@ export default class Gallery extends React.Component {
                     <Hero title={title} image={hero} subtitle={photographer}/>
                     <GalleryPhotos photos={photos}/>
                 </main>
-                <Footer/>
+                <Footer email={this.props.contact.email} phone={this.props.contact.phoneNumber}/>
             </div>
         )
     }
@@ -49,7 +49,10 @@ export async function getStaticProps({params}) {
     const data = await res.json();
     const gallery = data[0];
 
+    const res_contact = await fetch(`${process.env.API_URI}/contact`);
+    const contact = await res_contact.json()
+
     return {
-        props: { gallery }
+        props: { gallery, contact}
     }
 }

@@ -1,16 +1,31 @@
 import React from "react";
 import Image from "next/image";
 import styles from "../styles/GalleryPhotos.module.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export class GalleryPhotos extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
         this.state = {sliderIndex: 0, sliderActive: false}
     }
 
-    setSliderIndex = (i) => {
-        this.setState({sliderIndex: i});
+    prevSlide = () => {
+        let newIndex;
+        if (this.state.sliderIndex === 0) {
+            newIndex = this.props.photos.length - 1;
+        } else {
+            newIndex = this.state.sliderIndex - 1;
+        }
+        this.setState({sliderIndex: newIndex});
+    }
+    nextSlide = () => {
+        let newIndex;
+        if (this.state.sliderIndex === this.props.photos.length - 1) {
+            newIndex = 0;
+        } else {
+            newIndex = this.state.sliderIndex + 1;
+        }
+        this.setState({sliderIndex: newIndex});
     }
     
     render() {
@@ -24,8 +39,6 @@ export class GalleryPhotos extends React.Component {
                                     this.setState({sliderActive: true, sliderIndex: index});
                                 }}>
                                     <Image src={`${process.env.NEXT_PUBLIC_API_URI}${photo.url}`}
-                                           width={photo.width}
-                                           height={photo.height}
                                            objectFit={"cover"}
                                            objectPosition={"center"}
                                            layout={"fill"}
@@ -39,9 +52,16 @@ export class GalleryPhotos extends React.Component {
                 </section>
                 {/*TODO: Add butons */}
                 <section className={`${styles.slides} ${this.state.sliderActive ? styles["slides--active"] : ""}`}>
+                    <div className={`${styles.slidesButton} ${styles.prev}`} onClick={this.prevSlide}>
+                        <FontAwesomeIcon icon={["fas", "angle-left"]}/>
+                    </div>
+                    <div className={`${styles.slidesButton} ${styles.next}`} onClick={this.nextSlide}>
+                        <FontAwesomeIcon icon={["fas", "angle-right"]}/>
+                    </div>
+                    <div className={`${styles.slidesButton} ${styles.close}`} onClick={ () => this.setState({sliderActive: false})}>
+                        <FontAwesomeIcon icon={["fa", "times"]}/>
+                    </div>
                     <Image src={`${process.env.NEXT_PUBLIC_API_URI}${this.props.photos[this.state.sliderIndex].url}`}
-                           width={this.props.photos[this.state.sliderIndex].width}
-                           height={this.props.photos[this.state.sliderIndex].height}
                            layout={"fill"}
                            objectFit={"contain"}
                            objectPosition={"center"}

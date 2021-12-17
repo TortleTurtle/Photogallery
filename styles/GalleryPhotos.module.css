@@ -28,9 +28,31 @@
     height: 100vh;
     z-index: 100;
     background: primary;
+    color: secondary;
 }
 .slides--active {
     display: block;
+}
+.slidesButton {
+    width: 2em;
+    position: fixed;
+    cursor: pointer;
+    z-index: 101;
+}
+/* Prev */
+.prev {
+    top: 50vh;
+    left: 1em;
+}
+/* Next */
+.next {
+    top: 50vh;
+    right: 1em;
+}
+/* Close */
+.close {
+    top: 1em;
+    right: 1em;
 }
 
 @media screen and (min-width: 768px) {

@@ -5,6 +5,7 @@ import {Header} from "../../components/header";
 import {Hero} from "../../components/hero";
 import {GalleryPhotos} from "../../components/galleryPhotos";
 import {Footer} from "../../components/footer";
+import Head from "next/head";
 
 export default class Gallery extends React.Component {
     constructor(props) {
@@ -13,10 +14,25 @@ export default class Gallery extends React.Component {
 
     render() {
 
-        const { title, description, photos, photographer, hero} = this.props.gallery;
+        const { title, description, photos, photographer, hero, slug} = this.props.gallery;
 
         return (
             <div className={styles.gallery}>
+                <Head>
+                    {/*Indexing*/}
+                    <meta name="robots" content="index"/>
+                    {/*SEO*/}
+                    <meta name="description" content={description}/>
+                    {/*OGP*/}
+                    <meta property="og:title" content={title}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URI}${hero.formats.large ? hero.formats.large.url : hero.url}`}/>
+                    <meta property="og:description" content={description}/>
+                    <meta property='og:url' content={`${process.env.NEXT_PUBLIC_DOMAIN}/galleries/${slug}`}/>
+                    <meta property="og:type" content="--Website"/>
+                    <meta property="og:site_name" content=""/>
+
+                    <title>{title}</title>
+                </Head>
                 <Header/>
                 <main>
                     <Hero title={title} image={hero} subtitle={photographer}/>

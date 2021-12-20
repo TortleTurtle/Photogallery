@@ -3,6 +3,7 @@ import {Banner} from "../components/banner";
 import {ImageText} from "../components/ImageText";
 import {Header} from "../components/header";
 import {Footer} from "../components/footer";
+import Head from "next/head";
 
 export default class Galleries extends React.Component {
     constructor(props) {
@@ -10,11 +11,28 @@ export default class Galleries extends React.Component {
     }
 
     render() {
+        const {title, description, bannerImages} = this.props.page;
+
         return (
             <div className={'galleries'}>
+                <Head>
+                    {/*Indexing*/}
+                    <meta name="robots" content="index"/>
+                    {/*SEO*/}
+                    <meta name="description" content={description}/>
+                    {/*OGP*/}
+                    <meta property="og:title" content={title}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URI}${bannerImages[0].formats.large ? bannerImages[0].formats.large.url : bannerImages[0].url}`}/>
+                    <meta property="og:description" content={description}/>
+                    <meta property='og:url' content={`${process.env.NEXT_PUBLIC_DOMAIN}/galleries`}/>
+                    <meta property="og:type" content="--Website"/>
+                    <meta property="og:site_name" content=""/>
+
+                    <title>{title}</title>
+                </Head>
                 <Header/>
                 <main>
-                    <Banner title={this.props.page.title} images={this.props.page.bannerImages} />
+                    <Banner title={title} images={bannerImages} />
                         {this.props.galleries.map((gallery, i) => {
                             return <ImageText
                                 key={gallery.id}

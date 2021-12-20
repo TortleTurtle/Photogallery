@@ -9,7 +9,7 @@ export class ImageText extends React.Component {
     }
 
     render() {
-        const {image, imagePosition , title, subtitle, text, link, textPosition} = this.props
+        const {image, imagePosition , title, subtitle, text, link, textPosition, custom} = this.props
 
         let linkElement;
         if (link) {
@@ -46,6 +46,7 @@ export class ImageText extends React.Component {
                         <h2>{title}</h2>
                         <h3>{subtitle ? subtitle : ""}</h3>
                         <p>{text ? text : ""}</p>
+                        {custom ? custom : null}
                         {linkElement ? linkElement : null}
                     </div>
                 </div>

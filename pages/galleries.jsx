@@ -22,7 +22,7 @@ export default class Galleries extends React.Component {
                     <meta name="description" content={description}/>
                     {/*OGP*/}
                     <meta property="og:title" content={title}/>
-                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URI}${bannerImages[0].formats.large ? bannerImages[0].formats.large.url : bannerImages[0].url}`}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${bannerImages[0].formats.large ? bannerImages[0].formats.large.url : bannerImages[0].url}`}/>
                     <meta property="og:description" content={description}/>
                     <meta property='og:url' content={`${process.env.NEXT_PUBLIC_DOMAIN}/galleries`}/>
                     <meta property="og:type" content="--Website"/>
@@ -52,13 +52,13 @@ export default class Galleries extends React.Component {
 }
 
 export async function getStaticProps() {
-    const res_page = await fetch(`${process.env.API_URI}/galleries-list`);
+    const res_page = await fetch(`${process.env.STRAPI_URL}/galleries-list`);
     const page = await res_page.json();
 
-    const res_galleries = await fetch(`${process.env.API_URI}/galleries?_sort=published_at:desc`);
+    const res_galleries = await fetch(`${process.env.STRAPI_URL}/galleries?_sort=published_at:desc`);
     const galleries = await res_galleries.json();
 
-    const res_contact = await fetch(`${process.env.API_URI}/contact`);
+    const res_contact = await fetch(`${process.env.STRAPI_URL}/contact`);
     const contact = await res_contact.json()
 
     return {

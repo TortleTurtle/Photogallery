@@ -21,7 +21,7 @@ export class ImageText extends React.Component {
             <section className={`${styles.imageText}`}>
                 <div className={styles.column} style={{order:imagePosition}}>
                     <div className={styles.imgContainer}>
-                        <Image src={`${process.env.NEXT_PUBLIC_API_URI}${image.url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
                                layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"center"}
@@ -31,7 +31,7 @@ export class ImageText extends React.Component {
                         />
                     </div>
                     <div className={styles.imgContainer}>
-                        <Image src={`${process.env.NEXT_PUBLIC_API_URI}${image.url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
                                width={image.width}
                                height={image.height}
                                layout={"responsive"}

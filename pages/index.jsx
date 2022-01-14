@@ -38,7 +38,7 @@ export default class Home extends Component {
                     <meta name="description" content={about}/>
                     {/*OGP*/}
                     <meta property="og:title" content={title}/>
-                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_API_URI}${images[0].formats.large ? images[0].formats.large.url : images[0].url}`}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${images[0].formats.large ? images[0].formats.large.url : images[0].url}`}/>
                     <meta property="og:description" content={about}/>
                     <meta property='og:url' content={`${process.env.NEXT_PUBLIC_DOMAIN}`}/>
                     <meta property="og:type" content="--Website"/>
@@ -60,10 +60,10 @@ export default class Home extends Component {
 }
 
 export async function getStaticProps() {
-    const res_page = await fetch(`${process.env.API_URI}/home`);
+    const res_page = await fetch(`${process.env.STRAPI_URL}/home`);
     const page = await res_page.json();
 
-    const res_contact = await fetch(`${process.env.API_URI}/contact`);
+    const res_contact = await fetch(`${process.env.STRAPI_URL}/contact`);
     const contact = await res_contact.json();
 
     console.log(contact);

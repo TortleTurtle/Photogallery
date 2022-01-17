@@ -69,6 +69,7 @@ export async function getStaticProps() {
     console.log(contact);
 
     return {
-        props: {page, contact}
+        props: {page, contact},
+        revalidate: 24*60*60, //revalidate at most once per day.
     }
 }

@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false,
+        fallback: true,
     }
 }
 
@@ -69,6 +69,7 @@ export async function getStaticProps({params}) {
     const contact = await res_contact.json()
 
     return {
-        props: { gallery, contact}
+        props: { gallery, contact},
+        revalidate: 24*60*60, //revalidate at most once per day.
     }
 }

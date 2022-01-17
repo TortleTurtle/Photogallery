@@ -62,6 +62,7 @@ export async function getStaticProps() {
     const contact = await res_contact.json()
 
     return {
-        props: {page, galleries, contact}
+        props: {page, galleries, contact},
+        revalidate: 24*60*60, //revalidate at most once per day.
     }
 }

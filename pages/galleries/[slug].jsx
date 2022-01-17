@@ -65,6 +65,8 @@ export async function getStaticProps({params}) {
     const data = await res.json();
     const gallery = data[0];
 
+    console.log(data.photos);
+
     const res_contact = await fetch(`${process.env.STRAPI_URL}/contact`);
     const contact = await res_contact.json()
 

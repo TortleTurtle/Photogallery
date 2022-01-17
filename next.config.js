@@ -13,4 +13,5 @@ module.exports = {
   images: {
     domains: domains,
   },
+  basePath: process.env.BASE_PATH,
 }

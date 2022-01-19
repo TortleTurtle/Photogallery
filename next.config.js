@@ -1,12 +1,12 @@
 const env_variables = {
   strapi_url: process.env.STRAPI_URL,
   public_strapi_url: process.env.NEXT_PUBLIC_STRAPI_URL,
-  next_url: process.env.NEXT_URL,
+  next_url: `${process.env.APP_URL}${process.env.BASE_PATH}`,
   image_domain: process.env.IMG_DOMAIN,
   base_path: process.env.BASE_PATH
 }
 
-const domains = (process.env.IMG_DOMAIN) ? [process.env.IMG_DOMAIN] : ['localhost'];
+const domains = (process.env.APP_URL) ? [process.env.APP_URL] : ['localhost'];
 console.log("Next JS env variables:");
 console.log(env_variables);
 

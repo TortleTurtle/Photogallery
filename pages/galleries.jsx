@@ -61,8 +61,6 @@ export async function getStaticProps() {
     const res_contact = await fetch(`${process.env.STRAPI_URL}/contact`);
     const contact = await res_contact.json()
 
-    console.log(page.bannerImages);
-
     return {
         props: {page, galleries, contact},
         revalidate: 24*60*60, //revalidate at most once per day.

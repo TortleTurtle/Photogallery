@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import styles from "../../styles/Gallery.module.css";
 import {Header} from "../../components/header";
 import {Hero} from "../../components/hero";
@@ -54,7 +53,7 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: true,
+        fallback: "blocking",
     }
 }
 
@@ -65,13 +64,11 @@ export async function getStaticProps({params}) {
     const data = await res.json();
     const gallery = data[0];
 
-    console.log(data.photos);
-
     const res_contact = await fetch(`${process.env.STRAPI_URL}/contact`);
     const contact = await res_contact.json()
 
     return {
         props: { gallery, contact},
-        revalidate: 24*60*60, //revalidate at most once per day.
+        //revalidate: 24*60*60, //revalidate at most once per day.
     }
 }

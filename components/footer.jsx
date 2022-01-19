@@ -42,14 +42,14 @@ export class Footer extends React.Component {
                     <div className={styles.seperator}/>
                     <div className={styles.socialsIcons}>
                         <a href={"https://facebook.com"} target="_blank" rel="noreferrer">
-                            <Image src={"/../public/images/facebook.svg"}
+                            <Image src={"/public/images/facebook.svg"}
                                    width={80}
                                    height={80}
                                    alt={"facebook icon"}
                             />
                         </a>
                         <a href="https://instagram.com" target="_blank" rel="noreferrer">
-                            <Image src={"/../public/images/instagram.svg"}
+                            <Image src={"/public/images/instagram.svg"}
                                    width={80}
                                    height={80}
                                    alt={"instagram icon"}

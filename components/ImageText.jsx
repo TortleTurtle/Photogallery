@@ -14,7 +14,7 @@ export class ImageText extends React.Component {
         let linkElement;
         if (link) {
             // eslint-disable-next-line react/no-unescaped-entities
-            linkElement = <Link href={link}><h4 className={styles.link}>See more >></h4></Link>
+            linkElement = <Link href={link} passHref><h4 className={styles.link}>See more >></h4></Link>
         }
 
         return (

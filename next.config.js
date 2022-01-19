@@ -1,7 +1,7 @@
 const env_variables = {
   strapi_url: process.env.STRAPI_URL,
   public_strapi_url: process.env.NEXT_PUBLIC_STRAPI_URL,
-  next_domain: process.env.NEXT_PUBLIC_DOMAIN,
+  next_url: process.env.NEXT_URL,
   image_domain: process.env.IMG_DOMAIN,
   base_path: process.env.BASE_PATH
 }

@@ -16,7 +16,7 @@ export class Banner extends React.Component {
                 </div>
                 <div className={styles.column}>
                     <div className={styles.imgContainer}>
-                        <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${images[0].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${images[0].url}`}
                                layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"center"}
@@ -26,7 +26,7 @@ export class Banner extends React.Component {
                         />
                     </div>
                     <div className={styles.imgContainer}>
-                        <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${images[0].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${images[0].url}`}
                                width={images[0].width}
                                height={images[0].height}
                                layout={"responsive"}
@@ -38,7 +38,7 @@ export class Banner extends React.Component {
                 </div>
                 <div className={styles.column}>
                     <div className={styles.imgContainer}>
-                        <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${images[1].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${images[1].url}`}
                                layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"center"}
@@ -48,7 +48,7 @@ export class Banner extends React.Component {
                         />
                     </div>
                     <div className={styles.imgContainer}>
-                        <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${images[1].url}`}
+                        <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${images[1].url}`}
                                width={images[1].width}
                                height={images[1].height}
                                layout={"responsive"}

@@ -38,7 +38,7 @@ export class GalleryPhotos extends React.Component {
                                 <div key={index} className={styles.imgContainer} onClick={() => {
                                     this.setState({sliderActive: true, sliderIndex: index});
                                 }}>
-                                    <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${photo.url}`}
+                                    <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${photo.url}`}
                                            objectFit={"cover"}
                                            objectPosition={"center"}
                                            layout={"fill"}
@@ -61,7 +61,7 @@ export class GalleryPhotos extends React.Component {
                     <div className={`${styles.slidesButton} ${styles.close}`} onClick={ () => this.setState({sliderActive: false})}>
                         <FontAwesomeIcon icon={["fa", "times"]}/>
                     </div>
-                    <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${this.props.photos[this.state.sliderIndex].url}`}
+                    <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${this.props.photos[this.state.sliderIndex].url}`}
                            layout={"fill"}
                            objectFit={"contain"}
                            objectPosition={"center"}

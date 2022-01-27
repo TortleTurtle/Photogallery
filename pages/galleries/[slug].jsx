@@ -24,7 +24,7 @@ export default class Gallery extends React.Component {
                     <meta name="description" content={description}/>
                     {/*OGP*/}
                     <meta property="og:title" content={title}/>
-                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${hero.formats.large ? hero.formats.large.url : hero.url}`}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${hero.formats.large ? hero.formats.large.url : hero.url}`}/>
                     <meta property="og:description" content={description}/>
                     <meta property='og:url' content={`${process.env.NEXT_PUBLIC_URL}/galleries/${slug}`}/>
                     <meta property="og:type" content="--Website"/>

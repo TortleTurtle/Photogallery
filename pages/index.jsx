@@ -38,7 +38,7 @@ export default class Home extends Component {
                     <meta name="description" content={about}/>
                     {/*OGP*/}
                     <meta property="og:title" content={title}/>
-                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_STRAPI_URL}${images[0].formats.large ? images[0].formats.large.url : images[0].url}`}/>
+                    <meta property="og:image" content={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${images[0].formats.large ? images[0].formats.large.url : images[0].url}`}/>
                     <meta property="og:description" content={about}/>
                     <meta property='og:url' content={`${process.env.NEXT_PUBLIC_URL}`}/>
                     <meta property="og:type" content="--Website"/>

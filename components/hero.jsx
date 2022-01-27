@@ -18,7 +18,7 @@ export class Hero extends React.Component {
                     <h3>{subtitle ? subtitle : ""}</h3>
                 </div>
                 <div className={styles.imgContainer}>
-                    <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+                    <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${image.url}`}
                            layout={"fill"}
                            objectFit={"cover"}
                            objectPosition={"center"}
@@ -28,7 +28,7 @@ export class Hero extends React.Component {
                     />
                 </div>
                 <div className={styles.imgContainer}>
-                    <Image src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${image.url}`}
+                    <Image src={`${process.env.NEXT_PUBLIC_BASE_IMG_URL}${image.url}`}
                            width={image.width}
                            height={image.height}
                            layout={"responsive"}

@@ -12,4 +12,5 @@ module.exports = {
   images: {
     domains: ['cheftags.nl', 'localhost', 'strapi-3o8lh.ondigitalocean.app', 'cheftags-space.ams3.digitaloceanspaces.com'],
   },
+  basePath: process.env.BASE_PATH || '',
 }

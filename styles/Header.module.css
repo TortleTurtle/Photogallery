@@ -9,7 +9,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     z-index: 100;
     background: primary;
-    color: white;
+    color: secondary;
 }
 .logoContainer {
     grid-column: 1 / 3;
@@ -17,6 +17,10 @@
     align-items: center;
     justify-content: flex-start;
     padding-left: 1em;
+    color: inherit;
+}
+.logoContainer h3 {
+    color: inherit;
 }
 .nav {
     position: fixed;

@@ -20,7 +20,7 @@ export class Header extends React.Component {
         return (
             <header className={styles.header}>
                 <div className={styles.logoContainer}>
-                    <h3> Lorem Ipsum</h3>
+                    <h3>Sporus</h3>
                 </div>
                 <nav className={`${styles.nav} ${this.state.toggle ? styles["nav--toggled"] : ""}`}>
                     <ul>
